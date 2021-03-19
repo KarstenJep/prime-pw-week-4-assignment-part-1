@@ -55,9 +55,8 @@ function getLast( ) {
   console.log("In 'getLast' function");
   if (array === []) {
     return undefined;
-  } else {
-    return array[array.length - 1]
   }
+    return array[array.length - 1]
 }
 console.log('Test - ', getLast());
 
@@ -65,13 +64,16 @@ console.log('Test - ', getLast());
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-array = ['hi'];
-for ( value of array){
+console.log("In 'find' function");
+let arr = ['Hi', 1, -5, 'Yo'];
+for ( let i=0; i<arr.length; i++){
+  if (value === arr[i]) {
   return true;
-}
+  }
   return false;
 }
-console.log('Value is found:', find());
+}
+console.log('Test - Value is found:', find( 'hi', arr));
 
 // ----------------------
 // Stretch Goals
@@ -79,17 +81,24 @@ console.log('Value is found:', find());
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+if (letter === string[0]) {
+  return true;
+} return false;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+let numArray = [1, 2, 3, 4];
+function sumAll( array ) {
+let sum = 0
   // TODO: loop to add items
+  for (let i=0; i<numArray.length; i++){
+    sum += numArray[i];
+  }
   return sum;
 }
+console.log(sumAll(numArray)); // Testing function
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -100,3 +109,13 @@ function sumAll( ) {
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+let myValue = 7;
+let numberlist = [3, 5, 7, 10]
+for ( let i=0; i < numberlist.length; i++){
+  let number = numberlist[i];
+  console.log(number);
+  if (number===myValue){
+    console.log('hurray');
+  }
+}
