@@ -50,15 +50,15 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-let array = [1, 3];
-function getLast( ) {
+let array = [1, 3, 5];
+function getLast( array ) {
   console.log("In 'getLast' function");
   if (array === []) {
     return undefined;
   }
     return array[array.length - 1]
 }
-console.log('Test - ', getLast());
+console.log('Test - ', getLast(array));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
@@ -69,11 +69,11 @@ console.log("In 'find' function");
 for ( let i=0; i<array.length; i++){
   if (value === array[i]) {
   return true;
-  }
 }
-return false;
 }
-console.log('Test - Value is found:', find('Hi', arr));
+  return false;
+}
+console.log('Test - Value is found:', find('Yo', arr));
 
 
 // ----------------------
@@ -90,7 +90,7 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-let numArray = [1, 2, 3, 4];
+let numArray = [1, 5, 3, 11];
 function sumAll( array ) {
 let sum = 0
   // TODO: loop to add items
@@ -99,7 +99,7 @@ let sum = 0
   }
   return sum;
 }
-console.log("sum question 9", sumAll(numArray)); // Testing function
+console.log('Test - should say 20', sumAll(numArray)); // Testing function
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -109,10 +109,10 @@ function allPositive( array ){
 let newArray = [];
 for (let i=0; i<array.length; i++) {
   if (array[i] > 0) {
-newArray.push(array[i])
+    newArray.push(array[i])
   }
 }
- return newArray;
+  return newArray;
 }
 console.log(allPositive(integerList));
 
@@ -120,14 +120,14 @@ console.log(allPositive(integerList));
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
 
-// let myValue = 7;
-// let numberlist = [3, 5, 7, 10]
-// function found( value, array){
-// for ( let i=0; i < numberlist.length; i++){
-//   let number = numberlist[i];
-//   console.log(number);
-//   if (number===myValue){
-//     console.log('hurray');
-//   }
-// }
-// } console.log(found(value, numberlist));
+// I built a function that takes a number as an argument, and adds up all the numbers
+// from 1 til the number passed to the function. Ex; if input is 4 then the function
+// should return 10 because 1 + 2 + 3 + 4 = 10.
+
+function addUp(num) {
+	let total = 0;
+	for(let i=1; i<=num; i++){
+		total += i
+	} return total
+}
+console.log(addUp(5));
